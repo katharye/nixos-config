@@ -6,5 +6,6 @@
     ./htop.nix
     ./cursor.nix
     ./kitty.nix
+    ./direnv.nix
   ];
 }
