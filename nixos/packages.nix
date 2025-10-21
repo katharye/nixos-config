@@ -24,12 +24,14 @@
     SDL2.dev
     pkg-config
     python
-    (python3.withPackages (ps: with ps; [
-      requests
-      beautifulsoup4
-    ]))
+    python3
+    #(python3.withPackages (ps: with ps; [
+    #  requests
+    #  beautifulsoup4
+    #]))
 
     # CLI utils
+    gemini-cli
     bat
     vim
     vscode
@@ -95,7 +97,9 @@
 
     # Other
     amnezia-vpn
+    nix-init
     home-manager
+    catppuccin-kvantum
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
     papirus-nord
