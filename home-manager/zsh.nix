@@ -16,7 +16,9 @@
                 hms = "home-manager switch --flake ${flakeDir}";
 
                 nf = "neofetch";
+
                 c = "code";
+		            dn= "echo 'use nix' > .envrc && direnv allow";
             };
         history.size = 10000;
         history.path = "${config.xdg.dataHome}/zsh/history";
@@ -40,7 +42,7 @@
     };
 
     home.packages = with pkgs; [
-    zsh-powerlevel10k
-    powerline-fonts
+      zsh-powerlevel10k
+      powerline-fonts
   ];
 }
