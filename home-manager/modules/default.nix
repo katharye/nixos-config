@@ -7,5 +7,6 @@
     ./cursor.nix
     ./kitty.nix
     ./direnv.nix
+    ./vscode.nix
   ];
 }
