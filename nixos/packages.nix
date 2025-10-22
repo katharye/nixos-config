@@ -17,6 +17,8 @@
     discord 
 
     # Codding stuff
+    direnv
+    nix
     clang-tools
     gnumake
     gcc
