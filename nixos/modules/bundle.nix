@@ -8,5 +8,6 @@
     ./audio.nix
    # ./gnome.nix
     ./amnezia.nix
+    ./steam.nix
   ];
 }
