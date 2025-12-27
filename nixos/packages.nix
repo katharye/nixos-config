@@ -9,14 +9,16 @@
     chromium
     ayugram-desktop 
     kitty
-    rofi
+    zoom-us
     wofi
     kdePackages.dolphin
     mpv
+    spotify
     libreoffice
     discord 
 
     # Codding stuff
+    nodejs_24
     direnv
     nix
     clang-tools
@@ -27,10 +29,7 @@
     pkg-config
     python
     python3
-    #(python3.withPackages (ps: with ps; [
-    #  requests
-    #  beautifulsoup4
-    #]))
+    docker
 
     # CLI utils
     gemini-cli
@@ -43,7 +42,7 @@
     wget
     git 
     fastfetch
-    htop
+    btop
     nix-index
     unzip
     scrot
@@ -78,7 +77,6 @@
     hyprland
     seatd
     xdg-desktop-portal-hyprland
-    polybar
     waybar
 
     # Sound
