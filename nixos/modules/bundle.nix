@@ -6,8 +6,9 @@
     ./network-manager.nix
     ./user.nix
     ./audio.nix
-   # ./gnome.nix
+    # ./gnome.nix
     ./amnezia.nix
     ./steam.nix
+    ./virtualboxS
   ];
 }
