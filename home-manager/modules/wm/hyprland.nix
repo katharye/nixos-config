@@ -54,12 +54,17 @@
 	#inactive_opacity = 0.6;
 	#fullscreen_opacity = 1.0;
 
-	blur = {
-	  enabled = true;
-	  size = 6;
-	  passes = 3;
-	  new_optimizations = true;
-	};
+	#blur = {
+	#  enabled = true;
+	#  size = 10;
+	#  passes = 3;
+  #  ignore_opacity = true;
+  #  noise = 0.02;
+  #  contrast = 1.0;
+  #  brightness = 1.2;
+  #  xray = false;
+	#  new_optimizations = true;
+	#};
 
 	shadow = {
 	  enabled = true;
