@@ -9,6 +9,6 @@
     # ./gnome.nix
     ./amnezia.nix
     ./steam.nix
-    ./virtualboxS
+    ./virtualbox
   ];
 }
