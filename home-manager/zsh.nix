@@ -18,7 +18,8 @@
                 nf = "neofetch";
 
                 c = "code";
-		            dn= "echo 'use nix' > .envrc && direnv allow";
+		            direnvAllow = "echo 'use nix' > .envrc && direnv allow";
+		            slp = "sudo systemctl suspend";
             };
         history.size = 10000;
         history.path = "${config.xdg.dataHome}/zsh/history";
