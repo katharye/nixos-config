@@ -12,6 +12,6 @@ home-manager switch --flake .
 ---
 
 ## Task list
-- [x] Hyprland minimal setup
+- [x] Working system
 - [ ] Automatically change system colors when changing wallpaper
 - [ ] Hybrid sleep mode
