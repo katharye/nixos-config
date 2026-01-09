@@ -8,3 +8,10 @@ cd $HOME/nix
 sudo nixos-rebuild switch --flake .
 home-manager switch --flake .
 ```
+
+---
+
+## Task list
+- [x] Hyprland minimal setup
+- [ ] Automatically change system colors when changing wallpaper
+- [ ] Hybrid sleep mode
