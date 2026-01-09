@@ -8,6 +8,7 @@
     # Desktop apps
     chromium
     ayugram-desktop 
+    rocketchat-desktop
     kitty
     zoom-us
     wofi
@@ -80,6 +81,7 @@
     waybar
 
     # Sound
+    pavucontrol
     pipewire
     pulseaudio
     pamixer
