@@ -13,5 +13,6 @@ home-manager switch --flake .
 
 ## Task list
 - [x] Working system
-- [ ] Automatically change system colors when changing wallpaper
+- [x] Automatically change system colors when changing wallpaper
 - [ ] Hybrid sleep mode
+- [ ] Lock screen

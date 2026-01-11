@@ -1,3 +1,8 @@
+let
+  wal = import ../../colors.nix;
+  hexToRgba = hex: "rgba(" + (builtins.substring 1 6 hex) + "ff)";
+  hexToRgbaAlpha = hex: alpha: "rgba(" + (builtins.substring 1 6 hex) + alpha + ")";
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -39,33 +44,30 @@
         gaps_in = 5;
         gaps_out = 15;
         border_size = 2;
-        "col.active_border" = "rgba(7c818cb0) rgba(5e5f66b0) 45deg";
-        "col.inactive_border" = "rgba(383c4aaa)";
+        "col.active_border" = "${hexToRgba wal.color4} ${hexToRgba wal.color5} 45deg";
+        "col.inactive_border" = "${hexToRgba wal.color8}";
         layout = "dwindle";
-
-
-      # no_cursor_warps = false;
       };
 
        decoration = {
 	rounding = 10;
 
-	#active_opacity = 0.85;
-	#inactive_opacity = 0.6;
-	#fullscreen_opacity = 1.0;
+	# active_opacity = 0.85;
+	# inactive_opacity = 0.6;
+	# fullscreen_opacity = 1.0;
 
-	#blur = {
-	#  enabled = true;
-	#  size = 10;
-	#  passes = 3;
-  #  ignore_opacity = true;
-  #  noise = 0.02;
-  #  contrast = 1.0;
-  #  brightness = 1.2;
-  #  xray = false;
-	#  new_optimizations = true;
-	#};
-
+	# blur = {
+	#   enabled = true;
+	#   size = 10;
+	#   passes = 3;
+  #   ignore_opacity = true;
+  #   noise = 0.02;
+  #   contrast = 1.0;
+  #   brightness = 1.2;
+  #   xray = false;
+	#   new_optimizations = true;
+	# };
+ 
 	shadow = {
 	  enabled = true;
           range = 4;
@@ -107,7 +109,7 @@
 	workspace_swipe = true;
 	workspace_swipe_fingers = 3;
 	workspace_swipe_invert = false;
-      #	workspace_swipe_distnce = 200;
+  #	workspace_swipe_distnce = 200;
 	workspace_swipe_forever = true;
       };
 
@@ -115,7 +117,7 @@
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
         enable_swallow = true;
-      # render_ahead_of_time = false;
+        # render_ahead_of_time = false;
         disable_hyprland_logo = true;
       };	
 
@@ -126,7 +128,7 @@
 
       exec-once = [
         "swww-daemon"
-        "swww img ~/nix/wallpapers/wallpaper.png"
+        "swww img $(cat ~/.cache/current-wallpaper)"
         "waybar"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"

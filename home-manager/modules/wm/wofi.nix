@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let
+  wal = import ../../colors.nix; 
+in
 {
   programs.wofi = {
     enable = true;
@@ -17,57 +20,77 @@
     
     style = ''
       * {
-        font-family: "JetBrains Mono";
+        font-family: "JetBrains Mono Nerd Font";
         font-size: 18px;
+        margin: 0;
+        padding: 0;
       }
       
       window {
         margin: 0px;
-        border: 2px solid #7c818c;
-        border-radius: 10px;
-        background-color: #17181c;
+        border-radius: 20px;
+        background-color: transparent;
+        overflow: hidden
       }
       
       #input {
         margin: 10px;
         padding: 10px;
-        border: 2px solid #7c818c;
-        border-radius: 10px;
-        color: #7c818c;
-        background-color: #17181c;
+        border: 2px solid ${wal.color8};
+        border-radius: 20px;
+        color: ${wal.foreground};
+        background-color: ${wal.background};
       }
       
       #inner-box {
         margin: 10px;
         border: none;
-        border-radius: 10px;
+        border-radius: 20px;
         background-color: transparent;
       }
-      
+
+      #outer-box{
+        border: 2px solid ${wal.color8};  
+        border-radius: 20px;
+        background-color: ${wal.background};
+      }
       #entry {
         margin: 10px;
         padding: 10px;
         border: none;
-        border-radius: 10px;
-        color: #7c818c;
+        border-radius: 20px;
+        color: ${wal.foreground};
         background-color: transparent;
       }
       
       #entry:selected {
-        background-color: #383c4a;
+        background-color: ${wal.color8};
+        color: ${wal.foreground};
+        border-radius: 20px;
       }
 
       #scroll {
         margin: 5px;
         border: none;
-        border-radius: 12px;
-        background-color: #1a1b20;
+        border-radius: 20px;
+        background-color: transparent;
+        padding: 0;
       }
-
-      #scroll:hover {
-        border: none;
-        border-radius: 12px;
-        background-color: #1a1b20;
+      
+      #scroll slider {
+        min-width: 4px;
+        min-height: 4px;
+        background-color: ${wal.color8};
+        border-radius: 2px;
+        margin: 2px; 
+      }
+      
+      #scroll slider:hover {
+        background-color: ${wal.color4};
+      }
+      
+      #scroll slider:active {
+        background-color: ${wal.color2};
       }
     '';
   };

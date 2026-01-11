@@ -7,7 +7,7 @@
 	
   imports = [
     ./modules
-	./zsh.nix
+	  ./zsh.nix
   ];
 
 }

@@ -79,6 +79,7 @@
     seatd
     xdg-desktop-portal-hyprland
     waybar
+    pywal16
 
     # Sound
     pavucontrol
