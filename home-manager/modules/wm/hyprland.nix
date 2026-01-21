@@ -40,7 +40,7 @@ in
 	sensitivity = 0; # Take values -1.0 - 1.0, 0 means no modification
       };
       
-       general = {
+      general = {
         gaps_in = 5;
         gaps_out = 15;
         border_size = 2;
@@ -52,21 +52,24 @@ in
        decoration = {
 	rounding = 10;
 
-	# active_opacity = 0.85;
-	# inactive_opacity = 0.6;
-	# fullscreen_opacity = 1.0;
+  # if $(cat ~/.cache/current-stage) then
+  # 	active_opacity = 0.85;
+  # 	inactive_opacity = 0.6;
+  # 	fullscreen_opacity = 1.0;
 
-	# blur = {
-	#   enabled = true;
-	#   size = 10;
-	#   passes = 3;
-  #   ignore_opacity = true;
-  #   noise = 0.02;
-  #   contrast = 1.0;
-  #   brightness = 1.2;
-  #   xray = false;
-	#   new_optimizations = true;
-	# };
+  # 	blur = {
+  # 	  enabled = true;
+  # 	  size = 10;
+  # 	  passes = 3;
+  #     ignore_opacity = true;
+  #     noise = 0.02;
+  #     contrast = 1.0;
+  #     brightness = 1.2;
+  #     xray = false;
+  # 	  new_optimizations = true;
+  #   };
+  # else
+  #   blur.enabled = false;
  
 	shadow = {
 	  enabled = true;
@@ -81,9 +84,10 @@ in
 	
 	# bezier = "myBezier, 0.68, -0.6, 0.32, 1.6";
 	# bezier = "myBezier, 0.34, 1.56, 0.64, 1";
-        bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
-        # bezier = "myBezier, 0.33, 0.82, 0.9, -0.08";
-
+  # bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+  # bezier = "myBezier, 0.33, 0.82, 0.9, -0.08";
+  bezier = "myBezier, 0.05, 0.5, 0.1, 1.1";
+  
 	animation = [
 	  "windows,       1, 2, myBezier"
 	  "windowsOut,    1, 2, default, popin 80%"
