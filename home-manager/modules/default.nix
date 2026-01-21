@@ -2,6 +2,7 @@
   imports = [
     ./wm
     ./git.nix
+    ./gtk.nix
     ./qt.nix
     ./htop.nix
     ./cursor.nix
