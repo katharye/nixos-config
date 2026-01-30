@@ -11,12 +11,12 @@ in
     settings = {
       mainBar = {
         layer = "top";
-        position = "top";
-        margin = "9 13 -10 18";
+        position = "left";
+        margin = "0";
 
-        modules-left = [ "clock" "hyprland/language" ];
-        modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "pulseaudio" "backlight" "network" "battery" "tray" "custom/powermenu" ];
+        modules-left   = [ "custom/powermenu" "hyprland/workspaces" "hyprland/language" ];
+        modules-center = [ "clock" ];
+        modules-right  = [ "pulseaudio" "backlight" "network" "battery" ];
 
         "hyprland/workspaces" = {
           disable-scroll = true;
@@ -31,7 +31,7 @@ in
         };
 
         "clock" = {
-          format = "{:%a, %d %b %I:%M %p}";
+          format = "{:%H\n%M\n──\n%d\n%m}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
 
@@ -43,12 +43,8 @@ in
 
         "pulseaudio" = {
           reverse-scrolling = 1;
-          format = "{volume}% {icon} {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
+          format = "{icon}";
+          format-muted = " {format_source}";
           format-icons = {
             headphone = "";
             hands-free = "";
@@ -58,16 +54,17 @@ in
             car = "";
             default = [ "" "" "" ];
           };
+          tooltip-format = "{volume}%";
           on-click = "pavucontrol";
-          min-length = 13;
+          min-length = 1;
         };
 
         "network" = {
-          format-wifi = " {essid}";
-          format-ethernet = " Ethernet";
-          format-disconnected = " Offline";
+          format-wifi = "";
+          format-ethernet = "";
+          format-disconnected = "";
           tooltip-format = ''
-            {ifname}
+            {ifname}, {essid}
             : {bandwidthDownBytes}
             : {bandwidthUpBytes}
             IP: {ipaddr}
@@ -77,9 +74,10 @@ in
 
         "backlight" = {
           device = "intel_backlight";
-          format = "{percent}% {icon}";
-          format-icons = [ "󰃠" ];
-          min-length = 7;
+          format = "{icon}";
+          format-icons = [ "󰃜" "󰃛" "󰃚" ];
+          tooltip-format = "{percent}%";
+          min-length = 1;
         };
 
         "battery" = {
@@ -87,17 +85,11 @@ in
             warning = 30;
             critical = 15;
           };
-          format = "{capacity}% {icon}";
-          format-charging = "{capacity}% ⚡";
-          format-plugged = "{capacity}% ";
-          format-alt = "{time} {icon}";
-          format-icons = [ "" "" "" "" "" "" "" "" "" "" ];
+          format = "{icon}";
+          format-charging = "󰂄";
+          format-plugged = "";
+          format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󱈏"];
           on-update = "$HOME/.config/waybar/scripts/check_battery.sh";
-        };
-
-        "tray" = {
-          icon-size = 16;
-          spacing = 0;
         };
       };
     };
@@ -128,11 +120,21 @@ in
         border-radius: 0;
         font-family: JetBrains Mono Nerd Font;
         font-weight: bold;
-        min-height: 20px;
+        min-width: 1px;
+      }
+
+      tooltip {
+          background-color: @background;
+          color: @foreground;
+          border-radius: 8px;
+          padding: 2px 10px 6px 10px;
+          font-family: "JetBrains Mono", monospace;
+          font-size: 12px;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
       }
 
       window#waybar {
-        background: transparent;
+        background: @background;
       }
 
       window#waybar.hidden {
@@ -141,32 +143,38 @@ in
 
       /* === Workspaces === */
       #workspaces {
-        background: @background;
-        border-radius: 20px;
-        padding: 0 0px;
+        background: @color1;
+        border-radius: 7px;
+        margin: 4px 8px;
+        padding: 2px 4px 4px 4px;
+      }
+
+      #workspaces button,
+      #workspaces button:hover,
+      #workspaces button.active {
+        outline: none;
+        border: none;
+        box-shadow: none;
+
+        color: @background;
+        border-radius: 7px;
+        padding: 0px;
+        font-size: 14px;
+        min-width: 10px; 
+        margin: 4px 0px 0px 0px;
       }
 
       #workspaces button {
-        color: @foreground;
-        background: transparent;
-        padding: 5px 8px;
-        margin: 0 0px;
-        font-size: 16px;
-        min-width: 20px; 
+        background: @color4;
       }
 
       #workspaces button:hover {
-        box-shadow: inherit;
-        text-shadow: inherit;
-        background: @color8;
-        color: @background;
-        border-radius: 20px;
+        background: @color3;
       }
 
       #workspaces button.active {
-        background: @color4;
-        color: @background;
-        border-radius: 20px;
+        background: @background;
+        color: @color4;
       }
 
       /* === Common modules === */
@@ -176,19 +184,28 @@ in
       #backlight,
       #battery,
       #language,
-      #custom-powermenu,
-      #tray {
-        background: @background;
-        color: @foreground;
-        border-radius: 20px;
-        padding-left: 16px;
-        padding-right: 16px;
-        margin-right: 8px;
+      #custom-powermenu {
+        background: @color1;
+        color: @background;
+        border-radius: 7px;
+        margin: 4px 8px;
+        font-size: 16px;
+
+        min-width: 10px; 
+        min-height: 30px;
+      }
+
+      #clock {
+        padding: 5px 0px;
+      }
+
+      #language {
+        font-size: 14px;
       }
 
       /* === Special Conditions === */
       #custom-powermenu:hover {
-        background: @background;
+        background: @color2;
         color: @foreground;
       }
 
@@ -205,14 +222,6 @@ in
       #battery.critical:not(.charging) {
         background: @color1;
         color: @foreground;
-        /* animation: blink 0.5s linear infinite alternate; */
-      }
-
-      @keyframes blink {
-        to {
-          background: @foreground;
-          color: @background;
-        }
       }
     '';
   };
