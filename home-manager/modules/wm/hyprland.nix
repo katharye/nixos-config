@@ -41,8 +41,8 @@ in
       };
       
       general = {
-        gaps_in = 5;
-        gaps_out = 15;
+        gaps_in = 3.5;
+        gaps_out = 5;
         border_size = 2;
         "col.active_border" = "${hexToRgba wal.color4} ${hexToRgba wal.color5} 45deg";
         "col.inactive_border" = "${hexToRgba wal.color8}";
