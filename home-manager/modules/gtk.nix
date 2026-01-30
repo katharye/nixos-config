@@ -5,7 +5,6 @@ let
 in
 {
   home.file.".config/gtk-3.0/gtk.css".text = ''
-    /* === Контекстное меню и popover'ы для Waybar и других GTK-приложений === */
     menu,
     .context-menu,
     popover {
@@ -33,7 +32,6 @@ in
       color: ${wal.color8};
     }
 
-    /* Для GTK4 (Waybar >= 0.10) */
     window.popup > menu,
     window > popover.menu {
       background-color: ${wal.background} !important;
