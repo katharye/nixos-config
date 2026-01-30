@@ -8,6 +8,9 @@ in
     enable = true;
     
     settings = {
+      no_actions = true;
+      close_on_focus_loss = true;
+      gtk_dark = true;
       width = 800;
       height = 500;
       location = "center";
