@@ -4,10 +4,10 @@
   inputs = {
     
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -39,8 +39,10 @@
       };
 
       homeConfigurations.katharye = home-manager.lib.homeManagerConfiguration {
-	pkgs = nixpkgs.legacyPackages.${system};
-	modules = [ ./home-manager/home.nix];
+	      pkgs = nixpkgs.legacyPackages.${system};
+	      modules = [
+          ./home-manager/home.nix
+        ];
       };
     };
 }
