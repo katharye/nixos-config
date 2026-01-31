@@ -19,7 +19,6 @@
     discord 
 
     # Codding stuff
-    nodejs_24
     direnv
     nix
     clang-tools
@@ -60,8 +59,6 @@
     lazygit
     bluez
     bluez-tools
-    zsh-powerlevel10k
-
 
     # GUI utils
     feh
@@ -86,16 +83,11 @@
     pipewire
     pulseaudio
     pamixer
-
-    # GPU stuff
-    intel-media-driver
-    intel-ocl
     
     # Screenshotting
     grim
     grimblast
     slurp
-    #frameshot
     swappy
 
     # Other
