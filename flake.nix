@@ -35,7 +35,7 @@
         };
 
         modules = [
-          ./hosts/${hostname}/configuration.nix
+          ./hosts/${hostname}/configurations/configuration.nix
         ];
       };
 
