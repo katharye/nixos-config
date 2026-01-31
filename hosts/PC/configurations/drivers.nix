@@ -10,10 +10,12 @@
   };
 
   # X-server
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "nvidia" ];
+  services = {
     displayManager.sddm.enable = true;
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+    };
   };
 
   # NVIDIA 
@@ -34,5 +36,5 @@
 
   boot.kernelParams = [ "nvidia-drm.modeset=1" ];
 
-  environment.systemPackages = with pkgs; [ nvidia-settings nvtop ];
+  # environment.systemPackages = with pkgs; [ nvidia-settings nvtop ];
 }
