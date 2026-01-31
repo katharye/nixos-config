@@ -1,7 +1,7 @@
 { pkgs, pkgs-stable, ... }: {
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = ["python-2.7.18.8" "electron-25.9.0"];
+    permittedInsecurePackages = ["electron-25.9.0"];
   };
 
   environment.systemPackages = with pkgs; [
@@ -28,7 +28,6 @@
     SDL2
     SDL2.dev
     pkg-config
-    python
     python3
     docker
 
@@ -111,7 +110,7 @@
   fonts.packages = with pkgs; [
     jetbrains-mono
     noto-fonts
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     twemoji-color-font
     font-awesome
     powerline-fonts

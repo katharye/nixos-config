@@ -8,6 +8,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    steam-run-native 
+    steam-run
   ];
 }
