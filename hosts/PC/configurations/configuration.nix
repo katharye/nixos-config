@@ -18,5 +18,9 @@
 
   system.stateVersion = "25.05"; 
 
+  # swapDevices = [{
+  #   device = "/var/lib/swapfile";
+  #   size = 36*1024; # 36 GB
+  # }];
 }
 
