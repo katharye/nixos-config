@@ -1,5 +1,6 @@
 {
   imports = [
+    ./hyprland.nix
     ./bootloader.nix
     ./bluetooth.nix
     ./network-manager.nix
