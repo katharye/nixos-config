@@ -3,7 +3,6 @@
 {
   imports =
     [
-      ../../../nixos/modules/plasma6.nix
       ../../../nixos/modules
 
       ../hardware-configuration.nix
