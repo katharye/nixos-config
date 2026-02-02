@@ -3,7 +3,6 @@
 {
   imports =
     [
-      ../../../nixos/modules/hyprland.nix
       ../../../nixos/modules
 
       ../hardware-configuration.nix
