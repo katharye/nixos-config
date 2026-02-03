@@ -16,3 +16,4 @@ home-manager switch --flake .
 - [x] Automatically change system colors when changing wallpaper
 - [ ] Hybrid sleep mode
 - [ ] Lock screen
+- [ ] Fix dualboot mode
